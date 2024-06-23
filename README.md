@@ -2,16 +2,16 @@
 <a href='#'><img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="600px"/></a>
   <br>
   <div>
-    <a href="https://github.com/redyf/nixdots/issues">
-        <img src="https://img.shields.io/github/issues/redyf/nixdots?color=fab387&labelColor=303446&style=for-the-badge">
+    <a href="https://github.com/aenri/nixdots/issues">
+        <img src="https://img.shields.io/github/issues/aenri/nixdots?color=fab387&labelColor=303446&style=for-the-badge">
     </a>
-    <a href="https://github.com/redyf/nixdots/stargazers">
-        <img src="https://img.shields.io/github/stars/redyf/nixdots?color=ca9ee6&labelColor=303446&style=for-the-badge">
+    <a href="https://github.com/aenri/nixdots/stargazers">
+        <img src="https://img.shields.io/github/stars/aenri/nixdots?color=ca9ee6&labelColor=303446&style=for-the-badge">
     </a>
-    <a href="https://github.com/redyf/nixdots">
-        <img src="https://img.shields.io/github/repo-size/redyf/nixdots?color=ea999c&labelColor=303446&style=for-the-badge">
+    <a href="https://github.com/aenri/nixdots">
+        <img src="https://img.shields.io/github/repo-size/aenri/nixdots?color=ea999c&labelColor=303446&style=for-the-badge">
     </a>
-    <a href="https://github.com/redyf/nixdots/LICENSE">
+    <a href="https://github.com/aenri/nixdots/LICENSE">
         <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=ca9ee6&colorA=313244&colorB=cba6f7"/>
     </a>
     <br>
@@ -69,7 +69,7 @@ nh os switch
 OR
 
 ```
-sudo nixos-rebuild switch --flake '.#redyf'
+sudo nixos-rebuild switch --flake '.#aenri'
 ```
 
 - Connect to internet (Change what's inside the brackets with your info).
@@ -119,19 +119,19 @@ nix-shell -p git nixUnstable neovim
 # create this folder if necessary
 mkdir -p /mnt/etc/
 # clone the repo
-git clone https://github.com/redyf/nixdots.git /mnt/etc/nixos --recurse-submodules
+git clone https://github.com/aenri/nixdots.git /mnt/etc/nixos --recurse-submodules
 # remove this file
-rm /mnt/etc/nixos/hosts/redyf/hardware-configuration.nix
+rm /mnt/etc/nixos/hosts/aenri/hardware-configuration.nix
 # generate the config and take some files
 nixos-generate-config --root /mnt
 rm /mnt/etc/nixos/configuration.nix
-mv /mnt/etc/nixos/hardware-configuration.nix /mnt/etc/nixos/hosts/redyf/
+mv /mnt/etc/nixos/hardware-configuration.nix /mnt/etc/nixos/hosts/aenri/
 # make sure you're in this path
 cd /mnt/etc/nixos
 # Install my config:
-nixos-install --flake '.#redyf'
+nixos-install --flake '.#aenri'
 # Obs:
-If you'd like to use my config as a template, all you need to do is replace "redyf" with your username.
+If you'd like to use my config as a template, all you need to do is replace "aenri" with your username.
 ```
 
 </details>
@@ -169,6 +169,6 @@ Credits for the installation section goes to [Stephenstechtalks](https://github.
 
 ## Conclusion
 
-That should be all! If you have any problem, feel free to make an issue in the github repo. (https://github.com/Redyf/nixdots/issues).
+That should be all! If you have any problem, feel free to make an issue in the github repo. (https://github.com/aenri/nixdots/issues).
 
-The code is licensed under the MIT license, so you can use or distribute the code however you like. If you have any questions, contact me on Discord: `redyf`.
+The code is licensed under the MIT license, so you can use or distribute the code however you like. If you have any questions, contact me on Discord: `aenri`.

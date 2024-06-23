@@ -92,7 +92,7 @@ in {
     dhcpcd.wait = "background";
     # avoid checking if IP is already taken to boot a few seconds faster
     dhcpcd.extraConfig = "noarp";
-    hostName = "redyf"; # Define your hostname.
+    hostName = "aenri"; # Define your hostname.
     # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
     # Configure network proxy if necessary
     # proxy.default = "http://user:password@proxy:port/";
@@ -101,9 +101,9 @@ in {
 
   users = {
     users = {
-      redyf = {
+      aenri = {
         isNormalUser = true;
-        description = "redyf";
+        description = "aenri";
         initialPassword = "123456";
         shell = pkgs.zsh;
         extraGroups = ["networkmanager" "wheel" "input" "docker" "kvm" "libvirtd"];
@@ -120,7 +120,7 @@ in {
       enable = true;
       extraRules = [
         {
-          users = ["redyf"];
+          users = ["aenri"];
           keepEnv = true;
           persist = true;
         }
@@ -139,7 +139,7 @@ in {
       enable = true;
       clean.enable = true;
       clean.extraArgs = "--keep-since 4d --keep 3";
-      flake = "/home/redyf/nixdots";
+      flake = "/home/aenri/nixdots";
     };
   };
 
@@ -311,7 +311,7 @@ in {
     autorandr = {
       enable = true;
       profiles = {
-        redyf = {
+        aenri = {
           config = {
             DP-0 = {
               enable = true;

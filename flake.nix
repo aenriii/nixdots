@@ -1,5 +1,5 @@
 {
-  description = "Redyf's Flake";
+  description = "aenri's Flake";
 
   inputs = {
     # Core
@@ -12,7 +12,7 @@
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     waybar-hyprland.url = "github:hyprwm/hyprland";
     nur.url = "github:nix-community/NUR";
-    Neve.url = "github:redyf/Neve";
+    Neve.url = "github:aenri/Neve";
     disko.url = "github:nix-community/disko";
     stylix.url = "github:danth/stylix";
     ags.url = "github:Aylur/ags";
@@ -20,10 +20,10 @@
     xdg-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
 
     # git+ssh://git@git.example.com/User/repo.git
-    # fontflake.url = "git+ssh://git@github.com/redyf/font-flake.git";
+    # fontflake.url = "git+ssh://git@github.com/aenri/font-flake.git";
 
     # liga-martian-mono = {
-    #   url = "github:redyf/LigaMartianMono";
+    #   url = "github:aenri/LigaMartianMono";
     #   flake = false;
     # };
 
@@ -34,12 +34,12 @@
     # };
 
     # berkeley = {
-    #   url = "git+ssh://git@github.com/redyf/berkeley.git";
+    #   url = "git+ssh://git@github.com/aenri/berkeley.git";
     #   flake = false;
     # };
 
     # monolisa-script = {
-    #   url = "git+ssh://git@github.com/redyf/test2.git";
+    #   url = "git+ssh://git@github.com/aenri/test2.git";
     #   flake = false;
     # };
   };
@@ -49,7 +49,6 @@
     nixpkgs,
     hyprland,
     home-manager,
-    disko,
     stylix,
     ...
   } @ inputs: let
@@ -62,7 +61,7 @@
     nixpkgsFor = forAllSystems (system: import nixpkgs {inherit system;});
   in {
     nixosConfigurations = {
-      redyf =
+      aenri =
         nixpkgs.lib.nixosSystem
         {
           system = "x86_64-linux";
@@ -70,24 +69,22 @@
             inherit
               inputs
               hyprland
-              disko
               ;
           };
           modules = [
-            ./hosts/redyf/configuration.nix
+            ./hosts/aenri/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager = {
                 useUserPackages = true;
                 useGlobalPkgs = false;
-                extraSpecialArgs = {inherit inputs disko;};
-                users.redyf = ./home/redyf/home.nix;
+                extraSpecialArgs = {inherit inputs;};
+                users.aenri = ./home/aenri/home.nix;
                 backupFileExtension = "backup";
               };
             }
             stylix.nixosModules.stylix
             hyprland.nixosModules.default
-            disko.nixosModules.disko
           ];
         };
       # selene = nixpkgs.lib.nixosSystem {
